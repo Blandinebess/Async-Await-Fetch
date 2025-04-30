@@ -24,6 +24,7 @@ This function will run when the "Tell Me a Joke" button is clicked.
 Use the API: https://official-joke-api.appspot.com/random_joke
 
 1. Fetch the joke data from the API
+
 2. Use await to wait for the response
 3. Parse the response with .json()
 4. Display the setup and punchline in the HTML
