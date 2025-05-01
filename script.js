@@ -45,26 +45,29 @@ BONUS:
 
 // STEP 1: Add a click event listener
 // Your code here:
-document.getElementById('buttonID').addEventListener('click', function(){
-  console.log('Button clicked!');
+document.getElementById("getJoke").addEventListener("click", function () {
+  console.log("Button clicked!");
 });
 
 // STEP 2: Define the async function getJoke()
 // Your code here:
 async function getJoke() {
   try {
-    const response =await fetch('https://official-joke-api.appspot.com/random_joke');
+    const response = await fetch(
+      "https://official-joke-api.appspot.com/random_joke"
+    );
     const jokeData = await response.json();
-    dpcument.getElementById('jokeDisplay').innerHTML =`<strong>${jokeData.setup}</strong>
+    document.getElementById("jokeSetup")
+    .innerHTML = `<strong>${jokeData.setup}</strong>
     <br>${jokeData.punchline}`;
   } catch (error) {
-    console.error('Error fetching joke:', error);
-    document.getElementById('jokeDisplay').textContent = 'Ooops! Something went wrong.';
-   }
+    console.error("Error fetching joke:", error);
+    document.getElementById("jokeDisplay").textContent =
+      "Ooops! Something went wrong.";
+  }
 }
-  
-document.getElementById('jokeButton').addEventListener('click', getJoke);
 
+document.getElementById("getJoke").addEventListener("click", getJoke);
 
 // STEP 3: Use fetch() and await to call the API
 // Your code here:
